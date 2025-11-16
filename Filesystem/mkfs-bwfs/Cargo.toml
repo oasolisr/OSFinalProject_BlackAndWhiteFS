@@ -1,0 +1,17 @@
+[package]
+name = "mkfs-bwfs"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[[bin]]
+name = "mkfs_bwfs"
+path = "src/main.rs"
+
+[dependencies]
+bwfs = { path = "../bwfs" }
+clap.workspace = true
+anyhow.workspace = true
+log.workspace = true
+env_logger.workspace = true
+configparser.workspace = true

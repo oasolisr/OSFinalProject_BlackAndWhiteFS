@@ -1,0 +1,23 @@
+[package]
+name = "bwfs"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+
+[dependencies]
+fuser.workspace = true
+image.workspace = true
+configparser.workspace = true
+tokio.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+anyhow.workspace = true
+thiserror.workspace = true
+log.workspace = true
+chrono.workspace = true
+byteorder.workspace = true
+libc = "0.2"
+
+[lib]
+name = "bwfs"
+path = "src/lib.rs"
