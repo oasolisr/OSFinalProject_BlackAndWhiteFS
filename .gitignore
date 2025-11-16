@@ -1,0 +1,68 @@
+# ==========================================
+# CARGO & RUST
+# ==========================================
+/target/
+/Cargo.lock
+**/*.rs.bk
+
+# ==========================================
+# BINARY OUTPUTS
+# ==========================================
+mkfs-bwfs/target/
+mount-bwfs/target/
+bwfs/target/
+
+# Compiled binaries
+mkfs-bwfs/target/release/mkfs_bwfs
+mount-bwfs/target/release/mount_bwfs
+
+# ==========================================
+# FUSE MOUNT & TEMP FILES
+# ==========================================
+
+# Mount point — NEVER commit mounted filesystems
+/tmp/bwfs_mount/
+
+# Files the kernel creates inside the mount
+.fuse_hidden*
+.Trash*
+.Trash-1000
+
+# ==========================================
+# FILESYSTEM DATA (BLOCK STORAGE)
+# ==========================================
+# NO versionar bloques PNG generados
+bwfs_data/*.png
+bwfs_data/metadata.json
+
+# If the directory should exist, ignore contents except .gitkeep
+# bwfs_data/*
+# !bwfs_data/.gitkeep
+
+# ==========================================
+# EDITOR TEMP FILES
+# ==========================================
+*.swp
+*.swo
+*.tmp
+*~
+.\#*
+
+# VSCode
+.vscode/
+
+# JetBrains
+.idea/
+
+# ==========================================
+# LOG FILES
+# ==========================================
+*.log
+*.trace
+*.debug
+
+# ==========================================
+# OS-Generated
+# ==========================================
+.DS_Store
+Thumbs.db
