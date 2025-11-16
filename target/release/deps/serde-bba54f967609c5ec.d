@@ -1,0 +1,14 @@
+/home/oasolisr/Documents/CusoSO/FinalProyect/Filesystem/target/release/deps/serde-bba54f967609c5ec.d: /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/oasolisr/Documents/CusoSO/FinalProyect/Filesystem/target/release/build/serde-cfe125327cacaf16/out/private.rs
+
+/home/oasolisr/Documents/CusoSO/FinalProyect/Filesystem/target/release/deps/libserde-bba54f967609c5ec.rlib: /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/oasolisr/Documents/CusoSO/FinalProyect/Filesystem/target/release/build/serde-cfe125327cacaf16/out/private.rs
+
+/home/oasolisr/Documents/CusoSO/FinalProyect/Filesystem/target/release/deps/libserde-bba54f967609c5ec.rmeta: /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs /home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs /home/oasolisr/Documents/CusoSO/FinalProyect/Filesystem/target/release/build/serde-cfe125327cacaf16/out/private.rs
+
+/home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/lib.rs:
+/home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/integer128.rs:
+/home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/mod.rs:
+/home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/de.rs:
+/home/oasolisr/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde-1.0.228/src/private/ser.rs:
+/home/oasolisr/Documents/CusoSO/FinalProyect/Filesystem/target/release/build/serde-cfe125327cacaf16/out/private.rs:
+
+# env-dep:OUT_DIR=/home/oasolisr/Documents/CusoSO/FinalProyect/Filesystem/target/release/build/serde-cfe125327cacaf16/out
