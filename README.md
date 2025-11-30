@@ -61,7 +61,7 @@ cargo build --release
 
 ```bash
 # Crear filesystem
-cargo build --release --bin mkfs.bwfs
+cargo build --release --bin mkfs_bwfs
 
 # Montar filesystem
 cargo build --release --bin mount.bwfs
@@ -81,7 +81,7 @@ sudo apt-get install fuse libfuse-dev
 cargo build --release
 
 # Copiar binarios al sistema (opcional)
-sudo cp target/release/mkfs.bwfs /usr/local/bin/
+sudo cp target/release/mkfs_bwfs /usr/local/bin/
 sudo cp target/release/mount.bwfs /usr/local/bin/
 ```
 
@@ -91,7 +91,7 @@ sudo cp target/release/mount.bwfs /usr/local/bin/
 
 ```bash
 # Editar config.ini con los parámetros deseados
-./target/release/mkfs.bwfs -c config.ini
+./target/release/mkfs_bwfs -c config.ini
 ```
 
 Esto creará la estructura del filesystem en la ruta especificada en `storage_path`.
@@ -286,7 +286,7 @@ node2 = 192.168.1.101:9000
 
 ```bash
 # Crear y montar filesystem
-./target/release/mkfs.bwfs -c config.ini
+./target/release/mkfs_bwfs -c config.ini
 mkdir -p /tmp/bwfs_test
 ./target/release/mount.bwfs -c config.ini /tmp/bwfs_test
 

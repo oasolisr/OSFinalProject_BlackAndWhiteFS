@@ -36,7 +36,10 @@ fn main() -> Result<()> {
     
     // Load configuration
     println!("Loading configuration from: {}", args.config);
-    let config = Config::from_ini(&args.config)?;
+    let mut config = Config::from_ini(&args.config)?;
+    
+    // Trim fingerprint (avoid mismatch caused by trailing spaces/newlines)
+    config.fingerprint = config.fingerprint.trim().to_string();
     
     // Validate configuration
     config.validate()?;
@@ -61,11 +64,45 @@ fn main() -> Result<()> {
         config.fingerprint.clone(),
     )?;
     
-    if !storage.verify_fingerprint()? {
-        anyhow::bail!("Filesystem fingerprint mismatch! This may not be a valid BWFS.");
+    // ==================================================================
+    // DEBUG: LEER LA PRIMERA PARTE DEL BLOQUE 0 PARA VER EL FINGERPRINT
+    // ==================================================================
+    let block0 = storage.read_block(0)?;
+    let fp = config.fingerprint.as_bytes();
+
+    println!("[DEBUG] First 32 bytes of block 0 (ASCII): {:?}",
+            String::from_utf8_lossy(&block0[..32]));
+
+    println!("[DEBUG] Expected FP bytes: {:?}", fp);
+    println!("[DEBUG] Found FP bytes   : {:?}", &block0[..fp.len()]);
+
+    // Comprobación manual antes del verify_fingerprint()
+    if !block0.starts_with(fp) {
+        println!("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        println!("FINGERPRINT MISMATCH BEFORE MOUNTING");
+        println!("Expected: {}", config.fingerprint);
+        println!("Found (ASCII): {:?}", String::from_utf8_lossy(&block0[..fp.len()]));
+        println!("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n");
     }
-    
-    println!("✓ Fingerprint verified");
+
+    match storage.verify_fingerprint() {
+        Ok(true) => println!("✓ Fingerprint verified"),
+        Ok(false) => {
+            anyhow::bail!(
+                "Filesystem fingerprint mismatch!\n\
+                 Expected: '{}'\n\
+                 But block 0 does NOT begin with that fingerprint.\n\
+                 Possible causes:\n\
+                   - mkfs_bwfs did not write the fingerprint.\n\
+                   - block_00000000.png was overwritten or corrupted.\n\
+                   - fingerprint in config.ini contains hidden spaces.",
+                config.fingerprint
+            );
+        }
+        Err(e) => {
+            anyhow::bail!("Error reading fingerprint from block 0: {}", e);
+        }
+    }
     
     // Load or create filesystem
     println!("Loading filesystem...");
